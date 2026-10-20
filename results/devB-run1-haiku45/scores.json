@@ -1,0 +1,553 @@
+{
+  "token_method": "tiktoken-cl100k_base",
+  "set": "sets/devB",
+  "systems": {
+    "vm": {
+      "n": 50,
+      "scored": 50,
+      "hit_at_1": {
+        "hits": 38,
+        "n": 50
+      },
+      "hit_at_3": {
+        "hits": 48,
+        "n": 50
+      },
+      "delivered_tokens": {
+        "mean": 2911.3,
+        "median": 2870.0
+      },
+      "seconds_mean": 2.891,
+      "misses": [
+        {
+          "name": "devB-nginx-07",
+          "rank": null,
+          "expected": [
+            "imported-web-nginx-org-en-docs-http-ngx-http-core-module-10-directives"
+          ]
+        },
+        {
+          "name": "devB-nginx-08",
+          "rank": 4,
+          "expected": [
+            "imported-web-nginx-org-en-docs-http-ngx-http-core-module-11-directives"
+          ]
+        }
+      ]
+    },
+    "bm25": {
+      "n": 50,
+      "scored": 50,
+      "hit_at_1": {
+        "hits": 36,
+        "n": 50
+      },
+      "hit_at_3": {
+        "hits": 44,
+        "n": 50
+      },
+      "delivered_tokens": {
+        "mean": 2719.2,
+        "median": 2526.5
+      },
+      "seconds_mean": 0.015,
+      "misses": [
+        {
+          "name": "devB-redis-07",
+          "rank": 14,
+          "expected": [
+            "imported-web-redis-io-docs-latest-operate-oss-and-stack-reference-cluster-spec-23-failure-detection"
+          ]
+        },
+        {
+          "name": "devB-kubernetes-09",
+          "rank": 5,
+          "expected": [
+            "imported-web-kubernetes-io-docs-concepts-workloads-pods-pod-lifecycle-27-garbage-collection-of-pods"
+          ]
+        },
+        {
+          "name": "devB-http-caching-02",
+          "rank": 6,
+          "expected": [
+            "imported-web-www-rfc-editor-org-rfc-rfc9111-07-3-1-storing-header-and-trailer-fields"
+          ]
+        },
+        {
+          "name": "devB-git-config-04",
+          "rank": 20,
+          "expected": [
+            "imported-web-git-scm-com-docs-git-config-2-51-1-02-syntax"
+          ]
+        },
+        {
+          "name": "devB-git-config-06",
+          "rank": 4,
+          "expected": [
+            "imported-web-git-scm-com-docs-git-config-2-51-1-03-includes"
+          ]
+        },
+        {
+          "name": "devB-python-logging-01",
+          "rank": 4,
+          "expected": [
+            "imported-web-docs-python-org-3-13-library-logging-02-logger-objects"
+          ]
+        }
+      ]
+    },
+    "rg": {
+      "n": 50,
+      "scored": 50,
+      "hit_at_1": {
+        "hits": 30,
+        "n": 50
+      },
+      "hit_at_3": {
+        "hits": 45,
+        "n": 50
+      },
+      "delivered_tokens": {
+        "mean": 3200.9,
+        "median": 3402.0
+      },
+      "seconds_mean": 0.137,
+      "misses": [
+        {
+          "name": "devB-redis-07",
+          "rank": 12,
+          "expected": [
+            "imported-web-redis-io-docs-latest-operate-oss-and-stack-reference-cluster-spec-23-failure-detection"
+          ]
+        },
+        {
+          "name": "devB-http-caching-07",
+          "rank": 9,
+          "expected": [
+            "imported-web-www-rfc-editor-org-rfc-rfc9111-17-4-2-4-serving-stale-responses"
+          ]
+        },
+        {
+          "name": "devB-git-config-02",
+          "rank": 8,
+          "expected": [
+            "imported-web-git-scm-com-docs-git-config-2-51-1-03-includes"
+          ]
+        },
+        {
+          "name": "devB-git-config-04",
+          "rank": 33,
+          "expected": [
+            "imported-web-git-scm-com-docs-git-config-2-51-1-02-syntax"
+          ]
+        },
+        {
+          "name": "devB-git-config-06",
+          "rank": 33,
+          "expected": [
+            "imported-web-git-scm-com-docs-git-config-2-51-1-03-includes"
+          ]
+        }
+      ]
+    },
+    "agent-rg": {
+      "n": 50,
+      "scored": 50,
+      "hit_at_1": {
+        "hits": 48,
+        "n": 50
+      },
+      "hit_at_3": {
+        "hits": 49,
+        "n": 50
+      },
+      "delivered_tokens": {
+        "mean": 8781.9,
+        "median": 8638.5
+      },
+      "seconds_mean": 15.407,
+      "misses": [
+        {
+          "name": "devB-redis-07",
+          "rank": null,
+          "expected": [
+            "imported-web-redis-io-docs-latest-operate-oss-and-stack-reference-cluster-spec-23-failure-detection"
+          ]
+        }
+      ]
+    },
+    "whole": {
+      "n": 50,
+      "scored": 50,
+      "hit_at_1": {
+        "hits": 0,
+        "n": 50
+      },
+      "hit_at_3": {
+        "hits": 0,
+        "n": 50
+      },
+      "delivered_tokens": {
+        "mean": 28632.0,
+        "median": 19834.0
+      },
+      "seconds_mean": 0.007,
+      "misses": [
+        {
+          "name": "devB-redis-01",
+          "rank": null,
+          "expected": [
+            "imported-web-redis-io-docs-latest-operate-oss-and-stack-reference-cluster-spec-03-write-safety"
+          ]
+        },
+        {
+          "name": "devB-redis-02",
+          "rank": null,
+          "expected": [
+            "imported-web-redis-io-docs-latest-operate-oss-and-stack-reference-cluster-spec-08-hash-tags"
+          ]
+        },
+        {
+          "name": "devB-redis-03",
+          "rank": null,
+          "expected": [
+            "imported-web-redis-io-docs-latest-operate-oss-and-stack-reference-cluster-spec-14-moved-redirection"
+          ]
+        },
+        {
+          "name": "devB-redis-04",
+          "rank": null,
+          "expected": [
+            "imported-web-redis-io-docs-latest-operate-oss-and-stack-reference-cluster-spec-15-live-reconfiguration"
+          ]
+        },
+        {
+          "name": "devB-redis-05",
+          "rank": null,
+          "expected": [
+            "imported-web-redis-io-docs-latest-operate-oss-and-stack-reference-cluster-spec-17-ask-redirection"
+          ]
+        },
+        {
+          "name": "devB-redis-06",
+          "rank": null,
+          "expected": [
+            "imported-web-redis-io-docs-latest-operate-oss-and-stack-reference-cluster-spec-18-client-connections-and-redirection-handling"
+          ]
+        },
+        {
+          "name": "devB-redis-07",
+          "rank": null,
+          "expected": [
+            "imported-web-redis-io-docs-latest-operate-oss-and-stack-reference-cluster-spec-23-failure-detection"
+          ]
+        },
+        {
+          "name": "devB-redis-08",
+          "rank": null,
+          "expected": [
+            "imported-web-redis-io-docs-latest-operate-oss-and-stack-reference-cluster-spec-34-replica-migration-algorithm"
+          ]
+        },
+        {
+          "name": "devB-redis-09",
+          "rank": null,
+          "expected": [
+            "imported-web-redis-io-docs-latest-operate-oss-and-stack-reference-cluster-spec-05-performance"
+          ]
+        },
+        {
+          "name": "devB-kubernetes-01",
+          "rank": null,
+          "expected": [
+            "imported-web-kubernetes-io-docs-concepts-workloads-pods-pod-lifecycle-02-pod-lifetime"
+          ]
+        },
+        {
+          "name": "devB-kubernetes-02",
+          "rank": null,
+          "expected": [
+            "imported-web-kubernetes-io-docs-concepts-workloads-pods-pod-lifecycle-03-pods-and-fault-recovery"
+          ]
+        },
+        {
+          "name": "devB-kubernetes-03",
+          "rank": null,
+          "expected": [
+            "imported-web-kubernetes-io-docs-concepts-workloads-pods-pod-lifecycle-07-how-pods-handle-problems-with-containers"
+          ]
+        },
+        {
+          "name": "devB-kubernetes-04",
+          "rank": null,
+          "expected": [
+            "imported-web-kubernetes-io-docs-concepts-workloads-pods-pod-lifecycle-08-pod-level-container-restart-policy"
+          ]
+        },
+        {
+          "name": "devB-kubernetes-05",
+          "rank": null,
+          "expected": [
+            "imported-web-kubernetes-io-docs-concepts-workloads-pods-pod-lifecycle-12-individual-container-restart-policy-and-rules"
+          ]
+        },
+        {
+          "name": "devB-kubernetes-06",
+          "rank": null,
+          "expected": [
+            "imported-web-kubernetes-io-docs-concepts-workloads-pods-pod-lifecycle-21-container-probes"
+          ]
+        },
+        {
+          "name": "devB-kubernetes-07",
+          "rank": null,
+          "expected": [
+            "imported-web-kubernetes-io-docs-concepts-workloads-pods-pod-lifecycle-21-container-probes"
+          ]
+        },
+        {
+          "name": "devB-kubernetes-08",
+          "rank": null,
+          "expected": [
+            "imported-web-kubernetes-io-docs-concepts-workloads-pods-pod-lifecycle-24-pod-termination-flow"
+          ]
+        },
+        {
+          "name": "devB-kubernetes-09",
+          "rank": null,
+          "expected": [
+            "imported-web-kubernetes-io-docs-concepts-workloads-pods-pod-lifecycle-27-garbage-collection-of-pods"
+          ]
+        },
+        {
+          "name": "devB-nginx-01",
+          "rank": null,
+          "expected": [
+            "imported-web-nginx-org-en-docs-http-ngx-http-core-module-01-directives"
+          ]
+        },
+        {
+          "name": "devB-nginx-02",
+          "rank": null,
+          "expected": [
+            "imported-web-nginx-org-en-docs-http-ngx-http-core-module-11-directives"
+          ]
+        },
+        {
+          "name": "devB-nginx-03",
+          "rank": null,
+          "expected": [
+            "imported-web-nginx-org-en-docs-http-ngx-http-core-module-09-directives"
+          ]
+        },
+        {
+          "name": "devB-nginx-04",
+          "rank": null,
+          "expected": [
+            "imported-web-nginx-org-en-docs-http-ngx-http-core-module-09-directives"
+          ]
+        },
+        {
+          "name": "devB-nginx-05",
+          "rank": null,
+          "expected": [
+            "imported-web-nginx-org-en-docs-http-ngx-http-core-module-09-directives"
+          ]
+        },
+        {
+          "name": "devB-nginx-06",
+          "rank": null,
+          "expected": [
+            "imported-web-nginx-org-en-docs-http-ngx-http-core-module-10-directives"
+          ]
+        },
+        {
+          "name": "devB-nginx-07",
+          "rank": null,
+          "expected": [
+            "imported-web-nginx-org-en-docs-http-ngx-http-core-module-10-directives"
+          ]
+        },
+        {
+          "name": "devB-nginx-08",
+          "rank": null,
+          "expected": [
+            "imported-web-nginx-org-en-docs-http-ngx-http-core-module-11-directives"
+          ]
+        },
+        {
+          "name": "devB-http-caching-01",
+          "rank": null,
+          "expected": [
+            "imported-web-www-rfc-editor-org-rfc-rfc9111-13-4-2-freshness"
+          ]
+        },
+        {
+          "name": "devB-http-caching-02",
+          "rank": null,
+          "expected": [
+            "imported-web-www-rfc-editor-org-rfc-rfc9111-07-3-1-storing-header-and-trailer-fields"
+          ]
+        },
+        {
+          "name": "devB-http-caching-03",
+          "rank": null,
+          "expected": [
+            "imported-web-www-rfc-editor-org-rfc-rfc9111-11-4-constructing-responses-from-caches"
+          ]
+        },
+        {
+          "name": "devB-http-caching-04",
+          "rank": null,
+          "expected": [
+            "imported-web-www-rfc-editor-org-rfc-rfc9111-12-4-1-calculating-cache-keys-with-the-vary-header-fi"
+          ]
+        },
+        {
+          "name": "devB-http-caching-05",
+          "rank": null,
+          "expected": [
+            "imported-web-www-rfc-editor-org-rfc-rfc9111-14-4-2-1-calculating-freshness-lifetime"
+          ]
+        },
+        {
+          "name": "devB-http-caching-06",
+          "rank": null,
+          "expected": [
+            "imported-web-www-rfc-editor-org-rfc-rfc9111-15-4-2-2-calculating-heuristic-freshness"
+          ]
+        },
+        {
+          "name": "devB-http-caching-07",
+          "rank": null,
+          "expected": [
+            "imported-web-www-rfc-editor-org-rfc-rfc9111-17-4-2-4-serving-stale-responses"
+          ]
+        },
+        {
+          "name": "devB-http-caching-08",
+          "rank": null,
+          "expected": [
+            "imported-web-www-rfc-editor-org-rfc-rfc9111-23-4-4-invalidating-stored-responses"
+          ]
+        },
+        {
+          "name": "devB-git-config-01",
+          "rank": null,
+          "expected": [
+            "imported-web-git-scm-com-docs-git-config-2-51-1-02-syntax"
+          ]
+        },
+        {
+          "name": "devB-git-config-02",
+          "rank": null,
+          "expected": [
+            "imported-web-git-scm-com-docs-git-config-2-51-1-03-includes"
+          ]
+        },
+        {
+          "name": "devB-git-config-03",
+          "rank": null,
+          "expected": [
+            "imported-web-git-scm-com-docs-git-config-2-51-1-02-syntax"
+          ]
+        },
+        {
+          "name": "devB-git-config-04",
+          "rank": null,
+          "expected": [
+            "imported-web-git-scm-com-docs-git-config-2-51-1-02-syntax"
+          ]
+        },
+        {
+          "name": "devB-git-config-05",
+          "rank": null,
+          "expected": [
+            "imported-web-git-scm-com-docs-git-config-2-51-1-02-syntax"
+          ]
+        },
+        {
+          "name": "devB-git-config-06",
+          "rank": null,
+          "expected": [
+            "imported-web-git-scm-com-docs-git-config-2-51-1-03-includes"
+          ]
+        },
+        {
+          "name": "devB-git-config-07",
+          "rank": null,
+          "expected": [
+            "imported-web-git-scm-com-docs-git-config-2-51-1-04-conditional-includes"
+          ]
+        },
+        {
+          "name": "devB-git-config-08",
+          "rank": null,
+          "expected": [
+            "imported-web-git-scm-com-docs-git-config-2-51-1-06-values"
+          ]
+        },
+        {
+          "name": "devB-python-logging-01",
+          "rank": null,
+          "expected": [
+            "imported-web-docs-python-org-3-13-library-logging-02-logger-objects"
+          ]
+        },
+        {
+          "name": "devB-python-logging-02",
+          "rank": null,
+          "expected": [
+            "imported-web-docs-python-org-3-13-library-logging-09-filter-objects"
+          ]
+        },
+        {
+          "name": "devB-python-logging-03",
+          "rank": null,
+          "expected": [
+            "imported-web-docs-python-org-3-13-library-logging-03-logger-objects"
+          ]
+        },
+        {
+          "name": "devB-python-logging-04",
+          "rank": null,
+          "expected": [
+            "imported-web-docs-python-org-3-13-library-logging-06-handler-objects"
+          ]
+        },
+        {
+          "name": "devB-python-logging-05",
+          "rank": null,
+          "expected": [
+            "imported-web-docs-python-org-3-13-library-logging-07-formatter-objects"
+          ]
+        },
+        {
+          "name": "devB-python-logging-06",
+          "rank": null,
+          "expected": [
+            "imported-web-docs-python-org-3-13-library-logging-09-filter-objects"
+          ]
+        },
+        {
+          "name": "devB-python-logging-07",
+          "rank": null,
+          "expected": [
+            "imported-web-docs-python-org-3-13-library-logging-14-module-level-functions"
+          ]
+        },
+        {
+          "name": "devB-python-logging-08",
+          "rank": null,
+          "expected": [
+            "imported-web-docs-python-org-3-13-library-logging-15-module-level-functions"
+          ]
+        }
+      ],
+      "fits_200k": {
+        "fits": 50,
+        "n": 50
+      }
+    }
+  }
+}

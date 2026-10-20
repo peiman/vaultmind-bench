@@ -1,0 +1,50 @@
+heldout-rfc-01	MUST use odd-numbered stream identifiers
+heldout-rfc-02	effectively disables flow control for that receiver
+heldout-rfc-03	do not count toward the stream limit
+heldout-rfc-04	since an invalid preface indicates that the peer
+heldout-rfc-05	never widely deployed and is deprecated
+heldout-rfc-06	SHOULD send an initial GOAWAY frame
+heldout-rfc-07	MUST track the negative flow-control window
+heldout-rfc-08	apply the updated settings as soon as possible
+heldout-py-01	This will deadlock when using `stdout=PIPE`
+heldout-py-02	if the selected shell itself was not found
+heldout-py-03	not implicitly choose to call a system shell
+heldout-py-04	must also pass `extra_groups=()`
+heldout-py-05	the process ID of the spawned shell
+heldout-py-06	could deadlock before exec is called
+heldout-py-07	passing `input=None` will behave the same
+heldout-py-08	may result in almost immediate
+heldout-py-09	defaults to using the `vfork()` system call
+heldout-k8s-01	only the Deployment's Pod template part
+heldout-k8s-02	it cannot be updated via
+heldout-k8s-03	It does not wait for the 5 replicas
+heldout-k8s-04	spread the additional replicas across all ReplicaSets
+heldout-k8s-05	returns a non-zero exit code
+heldout-k8s-06	killed before new ones are created
+heldout-k8s-07	would be between 3 and 5
+heldout-k8s-08	calculated from percentage by rounding down
+heldout-k8s-09	because the Deployment never reaches a complete state
+heldout-cargo-01	does not read config files from crates
+heldout-cargo-02	dots and dashes are converted to underscores
+heldout-cargo-03	values are merged in left-to-right order
+heldout-cargo-04	proc macros, will not receive the args
+heldout-cargo-05	not been used in 3 months
+heldout-cargo-06	In environments with `CI` set, the default
+heldout-cargo-07	the patch in the configuration file is used
+heldout-cargo-08	Cargo will use the `git` executable to fetch
+heldout-mdn-01	look at the browser's console for details
+heldout-mdn-02	The only type/subtype combinations allowed
+heldout-mdn-03	The default value is 5 seconds
+heldout-mdn-04	request to include credentials, set the
+heldout-mdn-05	the browser will block access to the response
+heldout-mdn-06	CORS-preflight requests must never include credentials
+heldout-mdn-07	support following redirects after a preflighted request
+heldout-mdn-08	the server should also include `Origin`
+heldout-gha-01	once every 5 minutes
+heldout-gha-02	contains more than 1,000 commits
+heldout-gha-03	do not exceed 21,000 characters
+heldout-gha-04	last matrix job that runs will override
+heldout-gha-05	cannot be directly referenced in `if:` conditionals
+heldout-gha-06	GitHub-hosted runners are not subject to these limits
+heldout-gha-07	after a maximum of 24 hours
+heldout-gha-08	release tag takes precedence over the branch

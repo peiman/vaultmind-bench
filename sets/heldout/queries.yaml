@@ -1,0 +1,451 @@
+# Held-out set — authored and labelled blind, by direct file reading, before any retrieval.
+# Judge only: do not tune strategies on these questions or their results.
+- name: heldout-rfc-01
+  id: heldout-rfc-01
+  text: "Which stream numbers may an HTTP/2 client choose for the requests it opens?"
+  doc: rfc9113
+  expected:
+    - imported-web-www-rfc-editor-org-rfc-rfc9113-19-5-1-1-stream-identifiers
+  keyphrase: "MUST use odd-numbered stream identifiers"
+  first_block: true
+
+- name: heldout-rfc-02
+  id: heldout-rfc-02
+  text: "My HTTP/2 server doesn't need backpressure on uploads. How can a receiver effectively switch flow control off?"
+  doc: rfc9113
+  expected:
+    - imported-web-www-rfc-editor-org-rfc-rfc9113-22-5-2-2-appropriate-use-of-flow-control
+  keyphrase: "effectively disables flow control for that receiver"
+  first_block: false
+
+- name: heldout-rfc-03
+  id: heldout-rfc-03
+  text: "Do streams reserved by server push count against SETTINGS_MAX_CONCURRENT_STREAMS?"
+  doc: rfc9113
+  expected:
+    - imported-web-www-rfc-editor-org-rfc-rfc9113-20-5-1-2-stream-concurrency
+  keyphrase: "do not count toward the stream limit"
+  first_block: false
+
+- name: heldout-rfc-04
+  id: heldout-rfc-04
+  text: "A client speaking plain HTTP/1.1 connected to my h2 listener. Am I required to send GOAWAY before I drop it?"
+  doc: rfc9113
+  expected:
+    - imported-web-www-rfc-editor-org-rfc-rfc9113-11-3-4-http-2-connection-preface
+  keyphrase: "since an invalid preface indicates that the peer"
+  first_block: false
+
+- name: heldout-rfc-05
+  id: heldout-rfc-05
+  text: "Should my client still try the Upgrade: h2c handshake to get cleartext HTTP/2?"
+  doc: rfc9113
+  expected:
+    - imported-web-www-rfc-editor-org-rfc-rfc9113-09-3-1-http-2-version-identification
+  keyphrase: "never widely deployed and is deprecated"
+  first_block: false
+
+- name: heldout-rfc-06
+  id: heldout-rfc-06
+  text: "How should an HTTP/2 server drain a connection during a deploy without losing requests that are already in flight?"
+  doc: rfc9113
+  expected:
+    - imported-web-www-rfc-editor-org-rfc-rfc9113-37-6-8-goaway
+  keyphrase: "SHOULD send an initial GOAWAY frame"
+  first_block: false
+
+- name: heldout-rfc-07
+  id: heldout-rfc-07
+  text: "The server shrank its initial window setting after I had already sent data on a stream. Can my send window go below zero?"
+  doc: rfc9113
+  expected:
+    - imported-web-www-rfc-editor-org-rfc-rfc9113-41-6-9-2-initial-flow-control-window-size
+  keyphrase: "MUST track the negative flow-control window"
+  first_block: false
+
+- name: heldout-rfc-08
+  id: heldout-rfc-08
+  text: "When my endpoint receives a SETTINGS frame without the ACK flag, how soon must it start using the new values?"
+  doc: rfc9113
+  expected:
+    - imported-web-www-rfc-editor-org-rfc-rfc9113-34-6-5-3-settings-synchronization
+  keyphrase: "apply the updated settings as soon as possible"
+  first_block: true
+
+- name: heldout-py-01
+  id: heldout-py-01
+  text: "My script hangs forever in Popen.wait() when the child writes a lot of output to a pipe. What's going on?"
+  doc: python_subprocess
+  expected:
+    - imported-web-docs-python-org-3-13-library-subprocess-11-popen-objects
+  keyphrase: "This will deadlock when using `stdout=PIPE`"
+  first_block: false
+
+- name: heldout-py-02
+  id: heldout-py-02
+  text: "With shell=True, launching a program that doesn't exist didn't raise OSError. When does it actually raise?"
+  doc: python_subprocess
+  expected:
+    - imported-web-docs-python-org-3-13-library-subprocess-09-exceptions
+  keyphrase: "if the selected shell itself was not found"
+  first_block: false
+
+- name: heldout-py-03
+  id: heldout-py-03
+  text: "If I pass user-supplied filenames containing semicolons as list arguments to subprocess, could a shell end up interpreting them?"
+  doc: python_subprocess
+  expected:
+    - imported-web-docs-python-org-3-13-library-subprocess-10-security-considerations
+  keyphrase: "not implicitly choose to call a system shell"
+  first_block: true
+
+- name: heldout-py-04
+  id: heldout-py-04
+  text: "I start a child as a less-privileged account with user=. Does it also drop the supplementary groups my process belongs to?"
+  doc: python_subprocess
+  expected:
+    - imported-web-docs-python-org-3-13-library-subprocess-07-popen-constructor
+  keyphrase: "must also pass `extra_groups=()`"
+  first_block: false
+
+- name: heldout-py-05
+  id: heldout-py-05
+  text: "With shell=True, which process does Popen.pid refer to?"
+  doc: python_subprocess
+  expected:
+    - imported-web-docs-python-org-3-13-library-subprocess-12-popen-objects
+  keyphrase: "the process ID of the spawned shell"
+  first_block: false
+
+- name: heldout-py-06
+  id: heldout-py-06
+  text: "My multithreaded app passes a callback that runs in the child just before the new program starts. Is that safe?"
+  doc: python_subprocess
+  expected:
+    - imported-web-docs-python-org-3-13-library-subprocess-06-popen-constructor
+  keyphrase: "could deadlock before exec is called"
+  first_block: false
+
+- name: heldout-py-07
+  id: heldout-py-07
+  text: "Does check_output(input=None) let the child read from my terminal's stdin the way run() would?"
+  doc: python_subprocess
+  expected:
+    - imported-web-docs-python-org-3-13-library-subprocess-16-older-high-level-api
+  keyphrase: "passing `input=None` will behave the same"
+  first_block: false
+
+- name: heldout-py-08
+  id: heldout-py-08
+  text: "I set timeout=0.001 on subprocess.run and got TimeoutExpired straight away. Is that expected?"
+  doc: python_subprocess
+  expected:
+    - imported-web-docs-python-org-3-13-library-subprocess-22-timeout-behavior
+  keyphrase: "may result in almost immediate"
+  first_block: false
+
+- name: heldout-py-09
+  id: heldout-py-09
+  text: "On Linux, does Python's subprocess really fork() the whole parent process to start each child?"
+  doc: python_subprocess
+  expected:
+    - imported-web-docs-python-org-3-13-library-subprocess-24-disabling-use-of-vfork-or-posix-spawn
+  keyphrase: "defaults to using the `vfork()` system call"
+  first_block: true
+
+- name: heldout-k8s-01
+  id: heldout-k8s-01
+  text: "If I roll a Deployment back to an earlier revision, does it also restore the replica count I had back then?"
+  doc: k8s_deployment
+  expected:
+    - imported-web-kubernetes-io-docs-concepts-workloads-controllers-deployment-09-note
+  keyphrase: "only the Deployment's Pod template part"
+  first_block: true
+
+- name: heldout-k8s-02
+  id: heldout-k8s-02
+  text: "I renamed the app label in my Deployment's selector and ran kubectl apply. Can a selector be changed in place like that?"
+  doc: k8s_deployment
+  expected:
+    - imported-web-kubernetes-io-docs-concepts-workloads-controllers-deployment-08-label-selector-updates
+  keyphrase: "it cannot be updated via"
+  first_block: true
+
+- name: heldout-k8s-03
+  id: heldout-k8s-03
+  text: "I pushed a second image change while the first rollout was only partly done. Does the controller finish the first rollout before starting on the new one?"
+  doc: k8s_deployment
+  expected:
+    - imported-web-kubernetes-io-docs-concepts-workloads-controllers-deployment-07-rollover-aka-multiple-updates-in-flight
+  keyphrase: "It does not wait for the 5 replicas"
+  first_block: false
+
+- name: heldout-k8s-04
+  id: heldout-k8s-04
+  text: "An autoscaler bumped my replicas while a rollout was stuck halfway. Which ReplicaSet gets the extra Pods?"
+  doc: k8s_deployment
+  expected:
+    - imported-web-kubernetes-io-docs-concepts-workloads-controllers-deployment-12-proportional-scaling
+  keyphrase: "spread the additional replicas across all ReplicaSets"
+  first_block: false
+
+- name: heldout-k8s-05
+  id: heldout-k8s-05
+  text: "In a CI script, how can I tell that a Kubernetes rollout stalled past its progress deadline?"
+  doc: k8s_deployment
+  expected:
+    - imported-web-kubernetes-io-docs-concepts-workloads-controllers-deployment-16-note
+  keyphrase: "returns a non-zero exit code"
+  first_block: false
+
+- name: heldout-k8s-06
+  id: heldout-k8s-06
+  text: "My app can't tolerate two versions running at once during an upgrade. Which Deployment strategy removes every old Pod first?"
+  doc: k8s_deployment
+  expected:
+    - imported-web-kubernetes-io-docs-concepts-workloads-controllers-deployment-21-selector
+  keyphrase: "killed before new ones are created"
+  first_block: false
+
+- name: heldout-k8s-07
+  id: heldout-k8s-07
+  text: "With the default rolling-update settings, how many Pods can exist at once while a 4-replica Deployment is being updated?"
+  doc: k8s_deployment
+  expected:
+    - imported-web-kubernetes-io-docs-concepts-workloads-controllers-deployment-05-note
+  keyphrase: "would be between 3 and 5"
+  first_block: false
+
+- name: heldout-k8s-08
+  id: heldout-k8s-08
+  text: "When maxUnavailable is given as a percentage, is the resulting Pod count rounded up or down?"
+  doc: k8s_deployment
+  expected:
+    - imported-web-kubernetes-io-docs-concepts-workloads-controllers-deployment-22-max-unavailable
+  keyphrase: "calculated from percentage by rounding down"
+  first_block: true
+
+- name: heldout-k8s-09
+  id: heldout-k8s-09
+  text: "My Deployment keeps more old ReplicaSets than revisionHistoryLimit allows while its Pods crash-loop. Why isn't cleanup happening?"
+  doc: k8s_deployment
+  expected:
+    - imported-web-kubernetes-io-docs-concepts-workloads-controllers-deployment-17-note
+  keyphrase: "because the Deployment never reaches a complete state"
+  first_block: false
+
+- name: heldout-cargo-01
+  id: heldout-cargo-01
+  text: "Each crate in my workspace has its own .cargo/config.toml, but building from the workspace root ignores them. Is that expected?"
+  doc: cargo_config
+  expected:
+    - imported-web-doc-rust-lang-org-cargo-reference-config-01-keyboard-shortcuts
+  keyphrase: "does not read config files from crates"
+  first_block: false
+
+- name: heldout-cargo-02
+  id: heldout-cargo-02
+  text: "What environment variable would set target.x86_64-unknown-linux-gnu.runner without touching the config file?"
+  doc: cargo_config
+  expected:
+    - imported-web-doc-rust-lang-org-cargo-reference-config-04-environment-variables
+  keyphrase: "dots and dashes are converted to underscores"
+  first_block: true
+
+- name: heldout-cargo-03
+  id: heldout-cargo-03
+  text: "If I pass --config twice with conflicting values for the same key, which one wins?"
+  doc: cargo_config
+  expected:
+    - imported-web-doc-rust-lang-org-cargo-reference-config-05-command-line-overrides
+  keyphrase: "values are merged in left-to-right order"
+  first_block: false
+
+- name: heldout-cargo-04
+  id: heldout-cargo-04
+  text: "When I cross-compile with --target, do my build scripts and proc macros also get the extra compiler flags?"
+  doc: cargo_config
+  expected:
+    - imported-web-doc-rust-lang-org-cargo-reference-config-10-build-rustflags
+  keyphrase: "proc macros, will not receive the args"
+  first_block: false
+
+- name: heldout-cargo-05
+  id: heldout-cargo-05
+  text: "Will Cargo ever clean up crate sources it downloaded into ~/.cargo that I haven't used in a long time?"
+  doc: cargo_config
+  expected:
+    - imported-web-doc-rust-lang-org-cargo-reference-config-12-global-caches
+  keyphrase: "not been used in 3 months"
+  first_block: true
+
+- name: heldout-cargo-06
+  id: heldout-cargo-06
+  text: "Why is incremental compilation off in my CI builds when I never configured it?"
+  doc: cargo_config
+  expected:
+    - imported-web-doc-rust-lang-org-cargo-reference-config-11-build-rustdocflags
+  keyphrase: "In environments with `CI` set, the default"
+  first_block: false
+
+- name: heldout-cargo-07
+  id: heldout-cargo-07
+  text: "The same dependency is patched both in Cargo.toml and in .cargo/config.toml. Which patch takes effect?"
+  doc: cargo_config
+  expected:
+    - imported-web-doc-rust-lang-org-cargo-reference-config-15-patch-patch
+  keyphrase: "the patch in the configuration file is used"
+  first_block: false
+
+- name: heldout-cargo-08
+  id: heldout-cargo-08
+  text: "Cargo's built-in git client can't handle my company's SSH setup for a git dependency. Can it shell out to the system git instead?"
+  doc: cargo_config
+  expected:
+    - imported-web-doc-rust-lang-org-cargo-reference-config-13-install-root
+  keyphrase: "Cargo will use the `git` executable to fetch"
+  first_block: false
+
+- name: heldout-mdn-01
+  id: heldout-mdn-01
+  text: "My fetch to another origin failed with a CORS error, but the error object has no details. How do I find out what went wrong?"
+  doc: mdn_cors
+  expected:
+    - imported-web-developer-mozilla-org-en-us-docs-web-http-guides-cors-02-functional-overview
+  keyphrase: "look at the browser's console for details"
+  first_block: false
+
+- name: heldout-mdn-02
+  id: heldout-mdn-02
+  text: "Which Content-Type values can a cross-origin POST use without the browser sending an OPTIONS check first?"
+  doc: mdn_cors
+  expected:
+    - imported-web-developer-mozilla-org-en-us-docs-web-http-guides-cors-03-simple-requests
+  keyphrase: "The only type/subtype combinations allowed"
+  first_block: false
+
+- name: heldout-mdn-03
+  id: heldout-mdn-03
+  text: "If my server omits Access-Control-Max-Age, how long does the browser reuse a preflight result?"
+  doc: mdn_cors
+  expected:
+    - imported-web-developer-mozilla-org-en-us-docs-web-http-guides-cors-05-preflighted-requests
+  keyphrase: "The default value is 5 seconds"
+  first_block: false
+
+- name: heldout-mdn-04
+  id: heldout-mdn-04
+  text: "My cross-origin fetch() isn't sending the session cookie. What do I need to change on the client side?"
+  doc: mdn_cors
+  expected:
+    - imported-web-developer-mozilla-org-en-us-docs-web-http-guides-cors-08-requests-with-credentials
+  keyphrase: "request to include credentials, set the"
+  first_block: false
+
+- name: heldout-mdn-05
+  id: heldout-mdn-05
+  text: "The API answers with Access-Control-Allow-Origin: * and my request carries cookies. Why can't my script read the response?"
+  doc: mdn_cors
+  expected:
+    - imported-web-developer-mozilla-org-en-us-docs-web-http-guides-cors-10-credentialed-requests-and-wildcards
+  keyphrase: "the browser will block access to the response"
+  first_block: false
+
+- name: heldout-mdn-06
+  id: heldout-mdn-06
+  text: "Should the browser's OPTIONS probe carry cookies or an Authorization header?"
+  doc: mdn_cors
+  expected:
+    - imported-web-developer-mozilla-org-en-us-docs-web-http-guides-cors-09-preflight-requests-and-credentials
+  keyphrase: "CORS-preflight requests must never include credentials"
+  first_block: true
+
+- name: heldout-mdn-07
+  id: heldout-mdn-07
+  text: "My cross-origin PUT fails as soon as the server answers it with a 302. Why?"
+  doc: mdn_cors
+  expected:
+    - imported-web-developer-mozilla-org-en-us-docs-web-http-guides-cors-07-preflighted-requests-and-redirects
+  keyphrase: "support following redirects after a preflighted request"
+  first_block: true
+
+- name: heldout-mdn-08
+  id: heldout-mdn-08
+  text: "My server echoes back one allowed origin per request instead of using *. What should it add so shared caches don't serve one origin's response to another?"
+  doc: mdn_cors
+  expected:
+    - imported-web-developer-mozilla-org-en-us-docs-web-http-guides-cors-12-access-control-allow-origin
+  keyphrase: "the server should also include `Origin`"
+  first_block: false
+
+- name: heldout-gha-01
+  id: heldout-gha-01
+  text: "Can I schedule a GitHub Actions workflow to run every minute?"
+  doc: gh_workflow_syntax
+  expected:
+    - imported-web-docs-github-com-en-actions-reference-workflows-and-actions-workflow-syntax-13-on-schedule
+  keyphrase: "once every 5 minutes"
+  first_block: false
+
+- name: heldout-gha-02
+  id: heldout-gha-02
+  text: "I pushed a branch with about 1,500 commits and my paths filter didn't skip the workflow. Why did it run?"
+  doc: gh_workflow_syntax
+  expected:
+    - imported-web-docs-github-com-en-actions-reference-workflows-and-actions-workflow-syntax-12-git-diff-comparisons
+  keyphrase: "contains more than 1,000 commits"
+  first_block: false
+
+- name: heldout-gha-03
+  id: heldout-gha-03
+  text: "Is there a length limit on the script I put inline in a step's run: key?"
+  doc: gh_workflow_syntax
+  expected:
+    - imported-web-docs-github-com-en-actions-reference-workflows-and-actions-workflow-syntax-52-jobs-job-id-steps-run-jobsjob-idstepsrun
+  keyphrase: "do not exceed 21,000 characters"
+  first_block: true
+
+- name: heldout-gha-04
+  id: heldout-gha-04
+  text: "Every leg of my matrix sets the same job output name. Which value do downstream jobs see?"
+  doc: gh_workflow_syntax
+  expected:
+    - imported-web-docs-github-com-en-actions-reference-workflows-and-actions-workflow-syntax-42-using-job-outputs-in-a-matrix-job
+  keyphrase: "last matrix job that runs will override"
+  first_block: false
+
+- name: heldout-gha-05
+  id: heldout-gha-05
+  text: "Can I gate a step with if: secrets.DEPLOY_KEY != '' directly?"
+  doc: gh_workflow_syntax
+  expected:
+    - imported-web-docs-github-com-en-actions-reference-workflows-and-actions-workflow-syntax-47-example-using-secrets
+  keyphrase: "cannot be directly referenced in `if:` conditionals"
+  first_block: true
+
+- name: heldout-gha-06
+  id: heldout-gha-06
+  text: "Will Docker Hub pull rate limits throttle my job containers on GitHub-hosted runners?"
+  doc: gh_workflow_syntax
+  expected:
+    - imported-web-docs-github-com-en-actions-reference-workflows-and-actions-workflow-syntax-63-jobs-job-id-strategy-fail-fast
+  keyphrase: "GitHub-hosted runners are not subject to these limits"
+  first_block: false
+
+- name: heldout-gha-07
+  id: heldout-gha-07
+  text: "My job on a self-hosted runner takes 30 hours. Will its GITHUB_TOKEN still be valid at the end?"
+  doc: gh_workflow_syntax
+  expected:
+    - imported-web-docs-github-com-en-actions-reference-workflows-and-actions-workflow-syntax-59-jobs-job-id-timeout-minutes
+  keyphrase: "after a maximum of 24 hours"
+  first_block: false
+
+- name: heldout-gha-08
+  id: heldout-gha-08
+  text: "The ref of my reusable workflow matches both a tag and a branch named v2. Which one gets used?"
+  doc: gh_workflow_syntax
+  expected:
+    - imported-web-docs-github-com-en-actions-reference-workflows-and-actions-workflow-syntax-66-jobs-job-id-uses
+  keyphrase: "release tag takes precedence over the branch"
+  first_block: false

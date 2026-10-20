@@ -1,0 +1,450 @@
+# Dev set B — authored and labelled by direct file reading, before retrieval.
+- name: devB-redis-01
+  id: devB-redis-01
+  text: "If a Redis Cluster partition lasts beyond NODE_TIMEOUT, what happens to writes made on the minority side before it stops accepting them?"
+  doc: redis
+  expected:
+    - imported-web-redis-io-docs-latest-operate-oss-and-stack-reference-cluster-spec-03-write-safety
+  keyphrase: "all the writes performed in the minority"
+  first_block: false
+
+- name: devB-redis-02
+  id: devB-redis-02
+  text: "I need several Redis keys to land together so a multi-key operation can run. What are hash tags meant to ensure?"
+  doc: redis
+  expected:
+    - imported-web-redis-io-docs-latest-operate-oss-and-stack-reference-cluster-spec-08-hash-tags
+  keyphrase: "multiple keys are allocated in the same"
+  first_block: true
+
+- name: devB-redis-03
+  id: devB-redis-03
+  text: "A Redis MOVED reply gave me a port but no hostname. Where should my client retry?"
+  doc: redis
+  expected:
+    - imported-web-redis-io-docs-latest-operate-oss-and-stack-reference-cluster-spec-14-moved-redirection
+  keyphrase: "same endpoint as the current request"
+  first_block: false
+
+- name: devB-redis-04
+  id: devB-redis-04
+  text: "During Redis resharding, when does MIGRATE remove the original key after sending it to the destination?"
+  doc: redis
+  expected:
+    - imported-web-redis-io-docs-latest-operate-oss-and-stack-reference-cluster-spec-15-live-reconfiguration
+  keyphrase: "once an OK code is received"
+  first_block: false
+
+- name: devB-redis-05
+  id: devB-redis-05
+  text: "Why does sending ASKING let an importing Redis node accept a redirected operation without permanently changing ownership?"
+  doc: redis
+  expected:
+    - imported-web-redis-io-docs-latest-operate-oss-and-stack-reference-cluster-spec-17-ask-redirection
+  keyphrase: "sets a one-time flag on the client"
+  first_block: false
+
+- name: devB-redis-06
+  id: devB-redis-06
+  text: "My Redis slot map says a slot is unassigned. What should the client try before returning an error?"
+  doc: redis
+  expected:
+    - imported-web-redis-io-docs-latest-operate-oss-and-stack-reference-cluster-spec-18-client-connections-and-redirection-handling
+  keyphrase: "try to fetch the slots configuration again"
+  first_block: false
+
+- name: devB-redis-07
+  id: devB-redis-07
+  text: "What does Redis Cluster do when it detects an unreachable node but cannot promote a replica?"
+  doc: redis
+  expected:
+    - imported-web-redis-io-docs-latest-operate-oss-and-stack-reference-cluster-spec-23-failure-detection
+  keyphrase: "stop receiving queries from clients"
+  first_block: true
+
+- name: devB-redis-08
+  id: devB-redis-08
+  text: "How does cluster-migration-barrier constrain a Redis replica that wants to move to an orphaned master?"
+  doc: redis
+  expected:
+    - imported-web-redis-io-docs-latest-operate-oss-and-stack-reference-cluster-spec-34-replica-migration-algorithm
+  keyphrase: "number of good replicas a master"
+  first_block: false
+
+- name: devB-redis-09
+  id: devB-redis-09
+  text: "In normal Redis Cluster writes, does a node wait for acknowledgments from other nodes, and what command can explicitly request that?"
+  doc: redis
+  expected:
+    - imported-web-redis-io-docs-latest-operate-oss-and-stack-reference-cluster-spec-05-performance
+  keyphrase: "do not wait for other nodes"
+  first_block: false
+
+- name: devB-kubernetes-01
+  id: devB-kubernetes-01
+  text: "Can Kubernetes bind an existing Pod to another node later in its lifetime?"
+  doc: kubernetes
+  expected:
+    - imported-web-kubernetes-io-docs-concepts-workloads-pods-pod-lifecycle-02-pod-lifetime
+  keyphrase: "once in their lifetime"
+  first_block: false
+
+- name: devB-kubernetes-02
+  id: devB-kubernetes-02
+  text: "If I replace a failed Pod using the same name, does the replacement preserve the original UID?"
+  doc: kubernetes
+  expected:
+    - imported-web-kubernetes-io-docs-concepts-workloads-pods-pod-lifecycle-03-pods-and-fault-recovery
+  keyphrase: "replacement would have a different"
+  first_block: false
+
+- name: devB-kubernetes-03
+  id: devB-kubernetes-03
+  text: "Why does Kubernetes delay repeated restart attempts when a container keeps crashing?"
+  doc: kubernetes
+  expected:
+    - imported-web-kubernetes-io-docs-concepts-workloads-pods-pod-lifecycle-07-how-pods-handle-problems-with-containers
+  keyphrase: "prevents a faulty container from overwhelming"
+  first_block: false
+
+- name: devB-kubernetes-04
+  id: devB-kubernetes-04
+  text: "What restart policy does a Pod get when I leave restartPolicy unspecified?"
+  doc: kubernetes
+  expected:
+    - imported-web-kubernetes-io-docs-concepts-workloads-pods-pod-lifecycle-08-pod-level-container-restart-policy
+  keyphrase: "default value is Always"
+  first_block: true
+
+- name: devB-kubernetes-05
+  id: devB-kubernetes-05
+  text: "When several container restart rules could match an exit, which rule is applied?"
+  doc: kubernetes
+  expected:
+    - imported-web-kubernetes-io-docs-concepts-workloads-pods-pod-lifecycle-12-individual-container-restart-policy-and-rules
+  keyphrase: "rules will be evaluated in order"
+  first_block: false
+
+- name: devB-kubernetes-06
+  id: devB-kubernetes-06
+  text: "Does a startup probe keep running periodically after application initialization succeeds?"
+  doc: kubernetes
+  expected:
+    - imported-web-kubernetes-io-docs-concepts-workloads-pods-pod-lifecycle-21-container-probes
+  keyphrase: "only executed at startup"
+  first_block: false
+
+- name: devB-kubernetes-07
+  id: devB-kubernetes-07
+  text: "What happens to a Pod's service endpoints when its readiness probe reports failure?"
+  doc: kubernetes
+  expected:
+    - imported-web-kubernetes-io-docs-concepts-workloads-pods-pod-lifecycle-21-container-probes
+  keyphrase: "removes the Pod's IP address"
+  first_block: false
+
+- name: devB-kubernetes-08
+  id: devB-kubernetes-08
+  text: "The Pod's grace period expired while preStop was still running. How much extra time does kubelet request?"
+  doc: kubernetes
+  expected:
+    - imported-web-kubernetes-io-docs-concepts-workloads-pods-pod-lifecycle-24-pod-termination-flow
+  keyphrase: "grace period extension of 2 seconds"
+  first_block: false
+
+- name: devB-kubernetes-09
+  id: devB-kubernetes-09
+  text: "After a Pod fails, how long does its API object remain without an explicit cleanup?"
+  doc: kubernetes
+  expected:
+    - imported-web-kubernetes-io-docs-concepts-workloads-pods-pod-lifecycle-27-garbage-collection-of-pods
+  keyphrase: "process explicitly removes them"
+  first_block: true
+
+- name: devB-nginx-01
+  id: devB-nginx-01
+  text: "Which Nginx version introduced the absolute_redirect directive?"
+  doc: nginx
+  expected:
+    - imported-web-nginx-org-en-docs-http-ngx-http-core-module-01-directives
+  keyphrase: "appeared in version 1.11.8."
+  first_block: true
+
+- name: devB-nginx-02
+  id: devB-nginx-02
+  text: "Why can the default server_names_hash_bucket_size differ between machines?"
+  doc: nginx
+  expected:
+    - imported-web-nginx-org-en-docs-http-ngx-http-core-module-11-directives
+  keyphrase: "size of the processor’s cache line"
+  first_block: true
+
+- name: devB-nginx-03
+  id: devB-nginx-03
+  text: "How long does Nginx's resolver cache DNS answers by default, and how can I override that lifetime?"
+  doc: nginx
+  expected:
+    - imported-web-nginx-org-en-docs-http-ngx-http-core-module-09-directives
+  keyphrase: "using the TTL value of a response"
+  first_block: false
+
+- name: devB-nginx-04
+  id: devB-nginx-04
+  text: "Will Nginx's resolver request both address families by default, and can I disable one?"
+  doc: nginx
+  expected:
+    - imported-web-nginx-org-en-docs-http-ngx-http-core-module-09-directives
+  keyphrase: "both IPv4 and IPv6 addresses while resolving"
+  first_block: false
+
+- name: devB-nginx-05
+  id: devB-nginx-05
+  text: "I set root for a static location. How does Nginx construct the filesystem path, and what should I use if the URI needs rewriting?"
+  doc: nginx
+  expected:
+    - imported-web-nginx-org-en-docs-http-ngx-http-core-module-09-directives
+  keyphrase: "merely adding a URI to the value"
+  first_block: false
+
+- name: devB-nginx-06
+  id: devB-nginx-06
+  text: "Why should I limit how much data Nginx sends in one sendfile call on a busy server?"
+  doc: nginx
+  expected:
+    - imported-web-nginx-org-en-docs-http-ngx-http-core-module-10-directives
+  keyphrase: "one fast connection may seize the worker"
+  first_block: false
+
+- name: devB-nginx-07
+  id: devB-nginx-07
+  text: "Several regex server names match this request. Which one wins after exact and wildcard names have been considered?"
+  doc: nginx
+  expected:
+    - imported-web-nginx-org-en-docs-http-ngx-http-core-module-10-directives
+  keyphrase: "first matching regular expression"
+  first_block: false
+
+- name: devB-nginx-08
+  id: devB-nginx-08
+  text: "Why put try_files in a PHP location before handing the request to FastCGI?"
+  doc: nginx
+  expected:
+    - imported-web-nginx-org-en-docs-http-ngx-http-core-module-11-directives
+  keyphrase: "existence of the PHP file before passing"
+  first_block: false
+
+- name: devB-http-caching-01
+  id: devB-http-caching-01
+  text: "How does HTTP caching distinguish a fresh response from a stale one?"
+  doc: http_caching
+  expected:
+    - imported-web-www-rfc-editor-org-rfc-rfc9111-13-4-2-freshness
+  keyphrase: "age has not yet exceeded its freshness"
+  first_block: true
+
+- name: devB-http-caching-02
+  id: devB-http-caching-02
+  text: "Should my HTTP cache preserve response headers it does not recognize?"
+  doc: http_caching
+  expected:
+    - imported-web-www-rfc-editor-org-rfc-rfc9111-07-3-1-storing-header-and-trailer-fields
+  keyphrase: "including unrecognized ones"
+  first_block: true
+
+- name: devB-http-caching-03
+  id: devB-http-caching-03
+  text: "When an HTTP cache serves a stored response without validating it, what must it do with Age?"
+  doc: http_caching
+  expected:
+    - imported-web-www-rfc-editor-org-rfc-rfc9111-11-4-constructing-responses-from-caches
+  keyphrase: "replacing any present in the response"
+  first_block: false
+
+- name: devB-http-caching-04
+  id: devB-http-caching-04
+  text: "For a Vary field, can a missing request header match a request where that header is present?"
+  doc: http_caching
+  expected:
+    - imported-web-www-rfc-editor-org-rfc-rfc9111-12-4-1-calculating-cache-keys-with-the-vary-header-fi
+  keyphrase: "if it is also absent there"
+  first_block: false
+
+- name: devB-http-caching-05
+  id: devB-http-caching-05
+  text: "If an HTTP response has conflicting freshness directives such as max-age and no-cache, which should a cache honor?"
+  doc: http_caching
+  expected:
+    - imported-web-www-rfc-editor-org-rfc-rfc9111-14-4-2-1-calculating-freshness-lifetime
+  keyphrase: "most restrictive directive should be honored"
+  first_block: false
+
+- name: devB-http-caching-06
+  id: devB-http-caching-06
+  text: "If I estimate freshness from Last-Modified, what fraction of the elapsed interval does the caching RFC give as a typical choice?"
+  doc: http_caching
+  expected:
+    - imported-web-www-rfc-editor-org-rfc-rfc9111-15-4-2-2-calculating-heuristic-freshness
+  keyphrase: "this fraction might be 10%"
+  first_block: false
+
+- name: devB-http-caching-07
+  id: devB-http-caching-07
+  text: "When can an HTTP cache serve stale content if no directive prohibits it?"
+  doc: http_caching
+  expected:
+    - imported-web-www-rfc-editor-org-rfc-rfc9111-17-4-2-4-serving-stale-responses
+  keyphrase: "unless it is disconnected"
+  first_block: false
+
+- name: devB-http-caching-08
+  id: devB-http-caching-08
+  text: "Does a state-changing HTTP request guarantee cache invalidation everywhere, or only along its own path?"
+  doc: http_caching
+  expected:
+    - imported-web-www-rfc-editor-org-rfc-rfc9111-23-4-4-invalidating-stored-responses
+  keyphrase: "in the caches it travels through"
+  first_block: false
+
+- name: devB-git-config-01
+  id: devB-git-config-01
+  text: "What characters start end-of-line comments in a Git config file?"
+  doc: git_config
+  expected:
+    - imported-web-git-scm-com-docs-git-config-2-51-1-02-syntax
+  keyphrase: "characters begin comments to the end"
+  first_block: true
+
+- name: devB-git-config-02
+  id: devB-git-config-02
+  text: "How does includeIf differ from include when Git reads configuration?"
+  doc: git_config
+  expected:
+    - imported-web-git-scm-com-docs-git-config-2-51-1-03-includes
+  keyphrase: "condition does not evaluate to true"
+  first_block: true
+
+- name: devB-git-config-03
+  id: devB-git-config-03
+  text: "Are Git configuration section names case-sensitive, and must a variable appear beneath a section header?"
+  doc: git_config
+  expected:
+    - imported-web-git-scm-com-docs-git-config-2-51-1-02-syntax
+  keyphrase: "Section names are case-insensitive."
+  first_block: false
+
+- name: devB-git-config-04
+  id: devB-git-config-04
+  text: "Does Git preserve spaces inside a config value even though it strips spaces around the assignment?"
+  doc: git_config
+  expected:
+    - imported-web-git-scm-com-docs-git-config-2-51-1-02-syntax
+  keyphrase: "Internal whitespace characters within *value* are retained"
+  first_block: false
+
+- name: devB-git-config-05
+  id: devB-git-config-05
+  text: "Can I use octal escape sequences in a quoted Git configuration value?"
+  doc: git_config
+  expected:
+    - imported-web-git-scm-com-docs-git-config-2-51-1-02-syntax
+  keyphrase: "including octal escape sequences) are invalid"
+  first_block: false
+
+- name: devB-git-config-06
+  id: devB-git-config-06
+  text: "A Git config includes a relative filename. Is that resolved from my shell's working directory or from the including config file?"
+  doc: git_config
+  expected:
+    - imported-web-git-scm-com-docs-git-config-2-51-1-03-includes
+  keyphrase: "relative to the configuration file"
+  first_block: false
+
+- name: devB-git-config-07
+  id: devB-git-config-07
+  text: "Can a config file selected by hasconfig:remote.*.url itself declare another remote URL?"
+  doc: git_config
+  expected:
+    - imported-web-git-scm-com-docs-git-config-2-51-1-04-conditional-includes
+  keyphrase: "not allowed to contain remote URLs"
+  first_block: false
+
+- name: devB-git-config-08
+  id: devB-git-config-08
+  text: "Can I specify a full RGB color in Git configuration, and what notation does it accept?"
+  doc: git_config
+  expected:
+    - imported-web-git-scm-com-docs-git-config-2-51-1-06-values
+  keyphrase: "24-bit RGB values as hex"
+  first_block: false
+
+- name: devB-python-logging-01
+  id: devB-python-logging-01
+  text: "If two modules request a Python logger using the same name, do they receive separate Logger objects?"
+  doc: python_logging
+  expected:
+    - imported-web-docs-python-org-3-13-library-logging-02-logger-objects
+  keyphrase: "reference to the same Logger object"
+  first_block: true
+
+- name: devB-python-logging-02
+  id: devB-python-logging-02
+  text: "What part of the Python logger hierarchy does the base Filter accept when initialized with A.B?"
+  doc: python_logging
+  expected:
+    - imported-web-docs-python-org-3-13-library-logging-09-filter-objects
+  keyphrase: "below a certain point in the logger hierarchy"
+  first_block: true
+
+- name: devB-python-logging-03
+  id: devB-python-logging-03
+  text: "My logging wrapper reports its own location instead of the caller's. How can stacklevel fix the recorded source location?"
+  doc: python_logging
+  expected:
+    - imported-web-docs-python-org-3-13-library-logging-03-logger-objects
+  keyphrase: "corresponding number of stack frames are skipped"
+  first_block: false
+
+- name: devB-python-logging-04
+  id: devB-python-logging-04
+  text: "Why can calling other logging APIs from an overridden Handler.emit cause a deadlock during concurrent reconfiguration?"
+  doc: python_logging
+  expected:
+    - imported-web-docs-python-org-3-13-library-logging-06-handler-objects
+  keyphrase: "handler-level lock has already been acquired"
+  first_block: false
+
+- name: devB-python-logging-05
+  id: devB-python-logging-05
+  text: "How can I switch timestamp conversion for all Python logging formatters rather than updating each instance?"
+  doc: python_logging
+  expected:
+    - imported-web-docs-python-org-3-13-library-logging-07-formatter-objects
+  keyphrase: "set the `converter` attribute in the `Formatter`"
+  first_block: false
+
+- name: devB-python-logging-06
+  id: devB-python-logging-06
+  text: "I attached a filter to a parent logger. Will it automatically filter events produced by child loggers?"
+  doc: python_logging
+  expected:
+    - imported-web-docs-python-org-3-13-library-logging-09-filter-objects
+  keyphrase: "will not be filtered by a logger’s"
+  first_block: false
+
+- name: devB-python-logging-07
+  id: devB-python-logging-07
+  text: "Do I need to pass logger instances between modules if each part calls getLogger with the same name?"
+  doc: python_logging
+  expected:
+    - imported-web-docs-python-org-3-13-library-logging-14-module-level-functions
+  keyphrase: "never need to be passed between different"
+  first_block: false
+
+- name: devB-python-logging-08
+  id: devB-python-logging-08
+  text: "Why is a later call to logging.basicConfig ignored once my root logger already has handlers, and how can I force it?"
+  doc: python_logging
+  expected:
+    - imported-web-docs-python-org-3-13-library-logging-15-module-level-functions
+  keyphrase: "unless the keyword argument *force* is set"
+  first_block: false

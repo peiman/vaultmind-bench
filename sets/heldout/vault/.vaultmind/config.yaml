@@ -1,0 +1,105 @@
+vault:
+  exclude:
+    - ".git"
+    - ".obsidian"
+    - ".trash"
+    - ".vaultmind"
+    # README.md is vault meta (this file's instructions), not a knowledge note.
+    # Excluding it keeps the vault's own README out of every query's results.
+    - "README.md"
+    # Episodes (captured session transcripts) are raw material for arc distillation,
+    # NOT retrieval targets. They're large — a transcript can be ~30x the size of an
+    # arc — and their signal is captured in the arcs distilled from them. Embedding
+    # them would dominate index cost and surface verbose transcripts over concise arcs.
+    - "episodes"
+
+# schema.aliases — per-vault frontmatter field aliases. When you migrate
+# notes that already use a field name (e.g. `last_updated`), you don't have
+# to rename them. Map vaultmind's canonical name to your existing one(s):
+#
+# schema:
+#   aliases:
+#     updated: [last_updated]
+#     created: [created_at, date_created]
+#
+# Aliases are non-destructive — vaultmind never rewrites your frontmatter.
+# A required field is satisfied if the canonical name OR any registered
+# alias is present with a non-empty value.
+
+# Types are the schema of your vault. Each type defines required and optional
+# frontmatter fields. The types here are the persona-shaped defaults — they
+# match what VaultMind optimizes for: an AI agent reconstructing itself from
+# a vault that humans and the agent collaboratively curate.
+#
+# Add or remove types freely. The agent reads the registry to know what
+# `--type` values vaultmind note create accepts and what frontmatter is
+# required.
+types:
+  identity:
+    required: [title]
+    optional: [aliases, tags, related_ids, source_ids]
+    statuses: []
+  principle:
+    required: [title]
+    optional: [aliases, tags, related_ids, source_ids]
+    statuses: []
+  arc:
+    required: [title]
+    optional: [aliases, tags, related_ids, source_ids, trigger]
+    statuses: []
+  reference:
+    required: [title]
+    optional: [aliases, tags, related_ids, source_ids]
+    statuses: []
+  concept:
+    required: [title]
+    optional: [aliases, tags, related_ids, source_ids, parent_id]
+    statuses: []
+  source:
+    required: [title, url]
+    optional: [aliases, tags, related_ids]
+    statuses: []
+  # The desk. `arc candidates` scans these as raw material to distill into arcs,
+  # and the docs have called them "the desk" since that command shipped — but
+  # the type was never registered, so `note create --type journal` was refused
+  # and every hand-written entry validated as unknown_type forever.
+  #
+  # `distilled_to` marks an entry whose lesson has become an arc; `arc
+  # candidates` skips those rather than proposing them again.
+  journal:
+    required: [title]
+    optional: [aliases, tags, related_ids, source_ids, date, owner, author, distilled_to]
+    statuses: []
+    # Raw material, not evidence. A desk entry is a thought caught mid-session;
+    # citing one through source_ids makes a note LOOK sourced while resting on
+    # something nobody reviewed. Distil it into an arc or reference and cite
+    # that instead. Relating to a journal (related_ids) stays fine — only
+    # claiming it as evidence is refused.
+    authoritative: false
+  decision:
+    required: [title, status]
+    optional: [related_ids, source_ids, tags]
+    statuses: [proposed, accepted, rejected, superseded]
+  # An unanswered question. Not knowledge, and not citable. note gap writes
+  # these; recall never returns them. No template: the minimal note is enough.
+  gap:
+    required: [title, question]
+    optional: [opened_at, session, asked_hits, closed_at, closed_by, tags]
+    statuses: [open, closed]
+    authoritative: false
+
+git:
+  policy:
+    dirty_unrelated: warn
+    dirty_target: refuse
+    detached_head: warn
+    merge_in_progress: refuse
+    no_repo: warn
+
+index:
+  db_path: .vaultmind/index.db
+
+memory:
+  alias_min_length: 3
+  tag_overlap_threshold: 2.0
+  context_pack_default_budget: 4096

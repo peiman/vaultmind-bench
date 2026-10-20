@@ -1,0 +1,768 @@
+{
+  "token_method": "tiktoken-cl100k_base",
+  "set": "sets/heldout",
+  "systems": {
+    "vm": {
+      "n": 50,
+      "scored": 50,
+      "hit_at_1": {
+        "hits": 32,
+        "n": 50
+      },
+      "hit_at_3": {
+        "hits": 45,
+        "n": 50
+      },
+      "delivered_tokens": {
+        "mean": 2610.9,
+        "median": 2875.0
+      },
+      "seconds_mean": 2.514,
+      "misses": [
+        {
+          "name": "heldout-rfc-01",
+          "rank": null,
+          "expected": [
+            "imported-web-www-rfc-editor-org-rfc-rfc9113-19-5-1-1-stream-identifiers"
+          ]
+        },
+        {
+          "name": "heldout-rfc-06",
+          "rank": null,
+          "expected": [
+            "imported-web-www-rfc-editor-org-rfc-rfc9113-37-6-8-goaway"
+          ]
+        },
+        {
+          "name": "heldout-k8s-03",
+          "rank": 5,
+          "expected": [
+            "imported-web-kubernetes-io-docs-concepts-workloads-controllers-deployment-07-rollover-aka-multiple-updates-in-flight"
+          ]
+        },
+        {
+          "name": "heldout-mdn-06",
+          "rank": null,
+          "expected": [
+            "imported-web-developer-mozilla-org-en-us-docs-web-http-guides-cors-09-preflight-requests-and-credentials"
+          ]
+        },
+        {
+          "name": "heldout-gha-03",
+          "rank": 4,
+          "expected": [
+            "imported-web-docs-github-com-en-actions-reference-workflows-and-actions-workflow-syntax-52-jobs-job-id-steps-run-jobsjob-idstepsrun"
+          ]
+        }
+      ]
+    },
+    "bm25": {
+      "n": 50,
+      "scored": 50,
+      "hit_at_1": {
+        "hits": 28,
+        "n": 50
+      },
+      "hit_at_3": {
+        "hits": 38,
+        "n": 50
+      },
+      "delivered_tokens": {
+        "mean": 2582.2,
+        "median": 2436.0
+      },
+      "seconds_mean": 0.008,
+      "misses": [
+        {
+          "name": "heldout-rfc-01",
+          "rank": 21,
+          "expected": [
+            "imported-web-www-rfc-editor-org-rfc-rfc9113-19-5-1-1-stream-identifiers"
+          ]
+        },
+        {
+          "name": "heldout-rfc-07",
+          "rank": 6,
+          "expected": [
+            "imported-web-www-rfc-editor-org-rfc-rfc9113-41-6-9-2-initial-flow-control-window-size"
+          ]
+        },
+        {
+          "name": "heldout-py-03",
+          "rank": 6,
+          "expected": [
+            "imported-web-docs-python-org-3-13-library-subprocess-10-security-considerations"
+          ]
+        },
+        {
+          "name": "heldout-py-09",
+          "rank": 5,
+          "expected": [
+            "imported-web-docs-python-org-3-13-library-subprocess-24-disabling-use-of-vfork-or-posix-spawn"
+          ]
+        },
+        {
+          "name": "heldout-k8s-03",
+          "rank": 6,
+          "expected": [
+            "imported-web-kubernetes-io-docs-concepts-workloads-controllers-deployment-07-rollover-aka-multiple-updates-in-flight"
+          ]
+        },
+        {
+          "name": "heldout-mdn-02",
+          "rank": 4,
+          "expected": [
+            "imported-web-developer-mozilla-org-en-us-docs-web-http-guides-cors-03-simple-requests"
+          ]
+        },
+        {
+          "name": "heldout-mdn-04",
+          "rank": 4,
+          "expected": [
+            "imported-web-developer-mozilla-org-en-us-docs-web-http-guides-cors-08-requests-with-credentials"
+          ]
+        },
+        {
+          "name": "heldout-mdn-05",
+          "rank": 7,
+          "expected": [
+            "imported-web-developer-mozilla-org-en-us-docs-web-http-guides-cors-10-credentialed-requests-and-wildcards"
+          ]
+        },
+        {
+          "name": "heldout-mdn-06",
+          "rank": 214,
+          "expected": [
+            "imported-web-developer-mozilla-org-en-us-docs-web-http-guides-cors-09-preflight-requests-and-credentials"
+          ]
+        },
+        {
+          "name": "heldout-mdn-07",
+          "rank": 6,
+          "expected": [
+            "imported-web-developer-mozilla-org-en-us-docs-web-http-guides-cors-07-preflighted-requests-and-redirects"
+          ]
+        },
+        {
+          "name": "heldout-gha-03",
+          "rank": 41,
+          "expected": [
+            "imported-web-docs-github-com-en-actions-reference-workflows-and-actions-workflow-syntax-52-jobs-job-id-steps-run-jobsjob-idstepsrun"
+          ]
+        },
+        {
+          "name": "heldout-gha-08",
+          "rank": 5,
+          "expected": [
+            "imported-web-docs-github-com-en-actions-reference-workflows-and-actions-workflow-syntax-66-jobs-job-id-uses"
+          ]
+        }
+      ]
+    },
+    "rg": {
+      "n": 50,
+      "scored": 50,
+      "hit_at_1": {
+        "hits": 20,
+        "n": 50
+      },
+      "hit_at_3": {
+        "hits": 32,
+        "n": 50
+      },
+      "delivered_tokens": {
+        "mean": 3284.1,
+        "median": 3286.0
+      },
+      "seconds_mean": 0.125,
+      "misses": [
+        {
+          "name": "heldout-rfc-01",
+          "rank": 25,
+          "expected": [
+            "imported-web-www-rfc-editor-org-rfc-rfc9113-19-5-1-1-stream-identifiers"
+          ]
+        },
+        {
+          "name": "heldout-rfc-05",
+          "rank": 5,
+          "expected": [
+            "imported-web-www-rfc-editor-org-rfc-rfc9113-09-3-1-http-2-version-identification"
+          ]
+        },
+        {
+          "name": "heldout-rfc-07",
+          "rank": 8,
+          "expected": [
+            "imported-web-www-rfc-editor-org-rfc-rfc9113-41-6-9-2-initial-flow-control-window-size"
+          ]
+        },
+        {
+          "name": "heldout-rfc-08",
+          "rank": 9,
+          "expected": [
+            "imported-web-www-rfc-editor-org-rfc-rfc9113-34-6-5-3-settings-synchronization"
+          ]
+        },
+        {
+          "name": "heldout-py-03",
+          "rank": 13,
+          "expected": [
+            "imported-web-docs-python-org-3-13-library-subprocess-10-security-considerations"
+          ]
+        },
+        {
+          "name": "heldout-py-08",
+          "rank": 4,
+          "expected": [
+            "imported-web-docs-python-org-3-13-library-subprocess-22-timeout-behavior"
+          ]
+        },
+        {
+          "name": "heldout-py-09",
+          "rank": 7,
+          "expected": [
+            "imported-web-docs-python-org-3-13-library-subprocess-24-disabling-use-of-vfork-or-posix-spawn"
+          ]
+        },
+        {
+          "name": "heldout-k8s-03",
+          "rank": 44,
+          "expected": [
+            "imported-web-kubernetes-io-docs-concepts-workloads-controllers-deployment-07-rollover-aka-multiple-updates-in-flight"
+          ]
+        },
+        {
+          "name": "heldout-k8s-07",
+          "rank": 4,
+          "expected": [
+            "imported-web-kubernetes-io-docs-concepts-workloads-controllers-deployment-05-note"
+          ]
+        },
+        {
+          "name": "heldout-k8s-08",
+          "rank": 4,
+          "expected": [
+            "imported-web-kubernetes-io-docs-concepts-workloads-controllers-deployment-22-max-unavailable"
+          ]
+        },
+        {
+          "name": "heldout-cargo-03",
+          "rank": 6,
+          "expected": [
+            "imported-web-doc-rust-lang-org-cargo-reference-config-05-command-line-overrides"
+          ]
+        },
+        {
+          "name": "heldout-cargo-08",
+          "rank": 4,
+          "expected": [
+            "imported-web-doc-rust-lang-org-cargo-reference-config-13-install-root"
+          ]
+        },
+        {
+          "name": "heldout-mdn-02",
+          "rank": 5,
+          "expected": [
+            "imported-web-developer-mozilla-org-en-us-docs-web-http-guides-cors-03-simple-requests"
+          ]
+        },
+        {
+          "name": "heldout-mdn-05",
+          "rank": 8,
+          "expected": [
+            "imported-web-developer-mozilla-org-en-us-docs-web-http-guides-cors-10-credentialed-requests-and-wildcards"
+          ]
+        },
+        {
+          "name": "heldout-mdn-06",
+          "rank": 44,
+          "expected": [
+            "imported-web-developer-mozilla-org-en-us-docs-web-http-guides-cors-09-preflight-requests-and-credentials"
+          ]
+        },
+        {
+          "name": "heldout-mdn-07",
+          "rank": 11,
+          "expected": [
+            "imported-web-developer-mozilla-org-en-us-docs-web-http-guides-cors-07-preflighted-requests-and-redirects"
+          ]
+        },
+        {
+          "name": "heldout-gha-03",
+          "rank": 35,
+          "expected": [
+            "imported-web-docs-github-com-en-actions-reference-workflows-and-actions-workflow-syntax-52-jobs-job-id-steps-run-jobsjob-idstepsrun"
+          ]
+        },
+        {
+          "name": "heldout-gha-05",
+          "rank": 4,
+          "expected": [
+            "imported-web-docs-github-com-en-actions-reference-workflows-and-actions-workflow-syntax-47-example-using-secrets"
+          ]
+        }
+      ]
+    },
+    "agent-rg": {
+      "n": 50,
+      "scored": 50,
+      "hit_at_1": {
+        "hits": 42,
+        "n": 50
+      },
+      "hit_at_3": {
+        "hits": 44,
+        "n": 50
+      },
+      "delivered_tokens": {
+        "mean": 8086.2,
+        "median": 7819.0
+      },
+      "seconds_mean": 6.96,
+      "misses": [
+        {
+          "name": "heldout-k8s-01",
+          "rank": null,
+          "expected": [
+            "imported-web-kubernetes-io-docs-concepts-workloads-controllers-deployment-09-note"
+          ]
+        },
+        {
+          "name": "heldout-k8s-05",
+          "rank": null,
+          "expected": [
+            "imported-web-kubernetes-io-docs-concepts-workloads-controllers-deployment-16-note"
+          ]
+        },
+        {
+          "name": "heldout-k8s-07",
+          "rank": null,
+          "expected": [
+            "imported-web-kubernetes-io-docs-concepts-workloads-controllers-deployment-05-note"
+          ]
+        },
+        {
+          "name": "heldout-k8s-09",
+          "rank": null,
+          "expected": [
+            "imported-web-kubernetes-io-docs-concepts-workloads-controllers-deployment-17-note"
+          ]
+        },
+        {
+          "name": "heldout-cargo-01",
+          "rank": null,
+          "expected": [
+            "imported-web-doc-rust-lang-org-cargo-reference-config-01-keyboard-shortcuts"
+          ]
+        },
+        {
+          "name": "heldout-cargo-08",
+          "rank": null,
+          "expected": [
+            "imported-web-doc-rust-lang-org-cargo-reference-config-13-install-root"
+          ]
+        }
+      ]
+    },
+    "agent-vm": {
+      "n": 50,
+      "scored": 50,
+      "hit_at_1": {
+        "hits": 46,
+        "n": 50
+      },
+      "hit_at_3": {
+        "hits": 49,
+        "n": 50
+      },
+      "delivered_tokens": {
+        "mean": 5901.6,
+        "median": 6539.0
+      },
+      "seconds_mean": 8.778,
+      "misses": [
+        {
+          "name": "heldout-py-06",
+          "rank": null,
+          "expected": [
+            "imported-web-docs-python-org-3-13-library-subprocess-06-popen-constructor"
+          ]
+        }
+      ]
+    },
+    "whole": {
+      "n": 50,
+      "scored": 50,
+      "hit_at_1": {
+        "hits": 0,
+        "n": 50
+      },
+      "hit_at_3": {
+        "hits": 0,
+        "n": 50
+      },
+      "delivered_tokens": {
+        "mean": 25585.0,
+        "median": 16953.0
+      },
+      "seconds_mean": 0.006,
+      "misses": [
+        {
+          "name": "heldout-rfc-01",
+          "rank": null,
+          "expected": [
+            "imported-web-www-rfc-editor-org-rfc-rfc9113-19-5-1-1-stream-identifiers"
+          ]
+        },
+        {
+          "name": "heldout-rfc-02",
+          "rank": null,
+          "expected": [
+            "imported-web-www-rfc-editor-org-rfc-rfc9113-22-5-2-2-appropriate-use-of-flow-control"
+          ]
+        },
+        {
+          "name": "heldout-rfc-03",
+          "rank": null,
+          "expected": [
+            "imported-web-www-rfc-editor-org-rfc-rfc9113-20-5-1-2-stream-concurrency"
+          ]
+        },
+        {
+          "name": "heldout-rfc-04",
+          "rank": null,
+          "expected": [
+            "imported-web-www-rfc-editor-org-rfc-rfc9113-11-3-4-http-2-connection-preface"
+          ]
+        },
+        {
+          "name": "heldout-rfc-05",
+          "rank": null,
+          "expected": [
+            "imported-web-www-rfc-editor-org-rfc-rfc9113-09-3-1-http-2-version-identification"
+          ]
+        },
+        {
+          "name": "heldout-rfc-06",
+          "rank": null,
+          "expected": [
+            "imported-web-www-rfc-editor-org-rfc-rfc9113-37-6-8-goaway"
+          ]
+        },
+        {
+          "name": "heldout-rfc-07",
+          "rank": null,
+          "expected": [
+            "imported-web-www-rfc-editor-org-rfc-rfc9113-41-6-9-2-initial-flow-control-window-size"
+          ]
+        },
+        {
+          "name": "heldout-rfc-08",
+          "rank": null,
+          "expected": [
+            "imported-web-www-rfc-editor-org-rfc-rfc9113-34-6-5-3-settings-synchronization"
+          ]
+        },
+        {
+          "name": "heldout-py-01",
+          "rank": null,
+          "expected": [
+            "imported-web-docs-python-org-3-13-library-subprocess-11-popen-objects"
+          ]
+        },
+        {
+          "name": "heldout-py-02",
+          "rank": null,
+          "expected": [
+            "imported-web-docs-python-org-3-13-library-subprocess-09-exceptions"
+          ]
+        },
+        {
+          "name": "heldout-py-03",
+          "rank": null,
+          "expected": [
+            "imported-web-docs-python-org-3-13-library-subprocess-10-security-considerations"
+          ]
+        },
+        {
+          "name": "heldout-py-04",
+          "rank": null,
+          "expected": [
+            "imported-web-docs-python-org-3-13-library-subprocess-07-popen-constructor"
+          ]
+        },
+        {
+          "name": "heldout-py-05",
+          "rank": null,
+          "expected": [
+            "imported-web-docs-python-org-3-13-library-subprocess-12-popen-objects"
+          ]
+        },
+        {
+          "name": "heldout-py-06",
+          "rank": null,
+          "expected": [
+            "imported-web-docs-python-org-3-13-library-subprocess-06-popen-constructor"
+          ]
+        },
+        {
+          "name": "heldout-py-07",
+          "rank": null,
+          "expected": [
+            "imported-web-docs-python-org-3-13-library-subprocess-16-older-high-level-api"
+          ]
+        },
+        {
+          "name": "heldout-py-08",
+          "rank": null,
+          "expected": [
+            "imported-web-docs-python-org-3-13-library-subprocess-22-timeout-behavior"
+          ]
+        },
+        {
+          "name": "heldout-py-09",
+          "rank": null,
+          "expected": [
+            "imported-web-docs-python-org-3-13-library-subprocess-24-disabling-use-of-vfork-or-posix-spawn"
+          ]
+        },
+        {
+          "name": "heldout-k8s-01",
+          "rank": null,
+          "expected": [
+            "imported-web-kubernetes-io-docs-concepts-workloads-controllers-deployment-09-note"
+          ]
+        },
+        {
+          "name": "heldout-k8s-02",
+          "rank": null,
+          "expected": [
+            "imported-web-kubernetes-io-docs-concepts-workloads-controllers-deployment-08-label-selector-updates"
+          ]
+        },
+        {
+          "name": "heldout-k8s-03",
+          "rank": null,
+          "expected": [
+            "imported-web-kubernetes-io-docs-concepts-workloads-controllers-deployment-07-rollover-aka-multiple-updates-in-flight"
+          ]
+        },
+        {
+          "name": "heldout-k8s-04",
+          "rank": null,
+          "expected": [
+            "imported-web-kubernetes-io-docs-concepts-workloads-controllers-deployment-12-proportional-scaling"
+          ]
+        },
+        {
+          "name": "heldout-k8s-05",
+          "rank": null,
+          "expected": [
+            "imported-web-kubernetes-io-docs-concepts-workloads-controllers-deployment-16-note"
+          ]
+        },
+        {
+          "name": "heldout-k8s-06",
+          "rank": null,
+          "expected": [
+            "imported-web-kubernetes-io-docs-concepts-workloads-controllers-deployment-21-selector"
+          ]
+        },
+        {
+          "name": "heldout-k8s-07",
+          "rank": null,
+          "expected": [
+            "imported-web-kubernetes-io-docs-concepts-workloads-controllers-deployment-05-note"
+          ]
+        },
+        {
+          "name": "heldout-k8s-08",
+          "rank": null,
+          "expected": [
+            "imported-web-kubernetes-io-docs-concepts-workloads-controllers-deployment-22-max-unavailable"
+          ]
+        },
+        {
+          "name": "heldout-k8s-09",
+          "rank": null,
+          "expected": [
+            "imported-web-kubernetes-io-docs-concepts-workloads-controllers-deployment-17-note"
+          ]
+        },
+        {
+          "name": "heldout-cargo-01",
+          "rank": null,
+          "expected": [
+            "imported-web-doc-rust-lang-org-cargo-reference-config-01-keyboard-shortcuts"
+          ]
+        },
+        {
+          "name": "heldout-cargo-02",
+          "rank": null,
+          "expected": [
+            "imported-web-doc-rust-lang-org-cargo-reference-config-04-environment-variables"
+          ]
+        },
+        {
+          "name": "heldout-cargo-03",
+          "rank": null,
+          "expected": [
+            "imported-web-doc-rust-lang-org-cargo-reference-config-05-command-line-overrides"
+          ]
+        },
+        {
+          "name": "heldout-cargo-04",
+          "rank": null,
+          "expected": [
+            "imported-web-doc-rust-lang-org-cargo-reference-config-10-build-rustflags"
+          ]
+        },
+        {
+          "name": "heldout-cargo-05",
+          "rank": null,
+          "expected": [
+            "imported-web-doc-rust-lang-org-cargo-reference-config-12-global-caches"
+          ]
+        },
+        {
+          "name": "heldout-cargo-06",
+          "rank": null,
+          "expected": [
+            "imported-web-doc-rust-lang-org-cargo-reference-config-11-build-rustdocflags"
+          ]
+        },
+        {
+          "name": "heldout-cargo-07",
+          "rank": null,
+          "expected": [
+            "imported-web-doc-rust-lang-org-cargo-reference-config-15-patch-patch"
+          ]
+        },
+        {
+          "name": "heldout-cargo-08",
+          "rank": null,
+          "expected": [
+            "imported-web-doc-rust-lang-org-cargo-reference-config-13-install-root"
+          ]
+        },
+        {
+          "name": "heldout-mdn-01",
+          "rank": null,
+          "expected": [
+            "imported-web-developer-mozilla-org-en-us-docs-web-http-guides-cors-02-functional-overview"
+          ]
+        },
+        {
+          "name": "heldout-mdn-02",
+          "rank": null,
+          "expected": [
+            "imported-web-developer-mozilla-org-en-us-docs-web-http-guides-cors-03-simple-requests"
+          ]
+        },
+        {
+          "name": "heldout-mdn-03",
+          "rank": null,
+          "expected": [
+            "imported-web-developer-mozilla-org-en-us-docs-web-http-guides-cors-05-preflighted-requests"
+          ]
+        },
+        {
+          "name": "heldout-mdn-04",
+          "rank": null,
+          "expected": [
+            "imported-web-developer-mozilla-org-en-us-docs-web-http-guides-cors-08-requests-with-credentials"
+          ]
+        },
+        {
+          "name": "heldout-mdn-05",
+          "rank": null,
+          "expected": [
+            "imported-web-developer-mozilla-org-en-us-docs-web-http-guides-cors-10-credentialed-requests-and-wildcards"
+          ]
+        },
+        {
+          "name": "heldout-mdn-06",
+          "rank": null,
+          "expected": [
+            "imported-web-developer-mozilla-org-en-us-docs-web-http-guides-cors-09-preflight-requests-and-credentials"
+          ]
+        },
+        {
+          "name": "heldout-mdn-07",
+          "rank": null,
+          "expected": [
+            "imported-web-developer-mozilla-org-en-us-docs-web-http-guides-cors-07-preflighted-requests-and-redirects"
+          ]
+        },
+        {
+          "name": "heldout-mdn-08",
+          "rank": null,
+          "expected": [
+            "imported-web-developer-mozilla-org-en-us-docs-web-http-guides-cors-12-access-control-allow-origin"
+          ]
+        },
+        {
+          "name": "heldout-gha-01",
+          "rank": null,
+          "expected": [
+            "imported-web-docs-github-com-en-actions-reference-workflows-and-actions-workflow-syntax-13-on-schedule"
+          ]
+        },
+        {
+          "name": "heldout-gha-02",
+          "rank": null,
+          "expected": [
+            "imported-web-docs-github-com-en-actions-reference-workflows-and-actions-workflow-syntax-12-git-diff-comparisons"
+          ]
+        },
+        {
+          "name": "heldout-gha-03",
+          "rank": null,
+          "expected": [
+            "imported-web-docs-github-com-en-actions-reference-workflows-and-actions-workflow-syntax-52-jobs-job-id-steps-run-jobsjob-idstepsrun"
+          ]
+        },
+        {
+          "name": "heldout-gha-04",
+          "rank": null,
+          "expected": [
+            "imported-web-docs-github-com-en-actions-reference-workflows-and-actions-workflow-syntax-42-using-job-outputs-in-a-matrix-job"
+          ]
+        },
+        {
+          "name": "heldout-gha-05",
+          "rank": null,
+          "expected": [
+            "imported-web-docs-github-com-en-actions-reference-workflows-and-actions-workflow-syntax-47-example-using-secrets"
+          ]
+        },
+        {
+          "name": "heldout-gha-06",
+          "rank": null,
+          "expected": [
+            "imported-web-docs-github-com-en-actions-reference-workflows-and-actions-workflow-syntax-63-jobs-job-id-strategy-fail-fast"
+          ]
+        },
+        {
+          "name": "heldout-gha-07",
+          "rank": null,
+          "expected": [
+            "imported-web-docs-github-com-en-actions-reference-workflows-and-actions-workflow-syntax-59-jobs-job-id-timeout-minutes"
+          ]
+        },
+        {
+          "name": "heldout-gha-08",
+          "rank": null,
+          "expected": [
+            "imported-web-docs-github-com-en-actions-reference-workflows-and-actions-workflow-syntax-66-jobs-job-id-uses"
+          ]
+        }
+      ],
+      "fits_200k": {
+        "fits": 50,
+        "n": 50
+      }
+    }
+  }
+}

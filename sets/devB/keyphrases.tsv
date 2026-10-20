@@ -1,0 +1,50 @@
+devB-redis-01	all the writes performed in the minority
+devB-redis-02	multiple keys are allocated in the same
+devB-redis-03	same endpoint as the current request
+devB-redis-04	once an OK code is received
+devB-redis-05	sets a one-time flag on the client
+devB-redis-06	try to fetch the slots configuration again
+devB-redis-07	stop receiving queries from clients
+devB-redis-08	number of good replicas a master
+devB-redis-09	do not wait for other nodes
+devB-kubernetes-01	once in their lifetime
+devB-kubernetes-02	replacement would have a different
+devB-kubernetes-03	prevents a faulty container from overwhelming
+devB-kubernetes-04	default value is Always
+devB-kubernetes-05	rules will be evaluated in order
+devB-kubernetes-06	only executed at startup
+devB-kubernetes-07	removes the Pod's IP address
+devB-kubernetes-08	grace period extension of 2 seconds
+devB-kubernetes-09	process explicitly removes them
+devB-nginx-01	appeared in version 1.11.8.
+devB-nginx-02	size of the processor’s cache line
+devB-nginx-03	using the TTL value of a response
+devB-nginx-04	both IPv4 and IPv6 addresses while resolving
+devB-nginx-05	merely adding a URI to the value
+devB-nginx-06	one fast connection may seize the worker
+devB-nginx-07	first matching regular expression
+devB-nginx-08	existence of the PHP file before passing
+devB-http-caching-01	age has not yet exceeded its freshness
+devB-http-caching-02	including unrecognized ones
+devB-http-caching-03	replacing any present in the response
+devB-http-caching-04	if it is also absent there
+devB-http-caching-05	most restrictive directive should be honored
+devB-http-caching-06	this fraction might be 10%
+devB-http-caching-07	unless it is disconnected
+devB-http-caching-08	in the caches it travels through
+devB-git-config-01	characters begin comments to the end
+devB-git-config-02	condition does not evaluate to true
+devB-git-config-03	Section names are case-insensitive.
+devB-git-config-04	Internal whitespace characters within *value* are retained
+devB-git-config-05	including octal escape sequences) are invalid
+devB-git-config-06	relative to the configuration file
+devB-git-config-07	not allowed to contain remote URLs
+devB-git-config-08	24-bit RGB values as hex
+devB-python-logging-01	reference to the same Logger object
+devB-python-logging-02	below a certain point in the logger hierarchy
+devB-python-logging-03	corresponding number of stack frames are skipped
+devB-python-logging-04	handler-level lock has already been acquired
+devB-python-logging-05	set the `converter` attribute in the `Formatter`
+devB-python-logging-06	will not be filtered by a logger’s
+devB-python-logging-07	never need to be passed between different
+devB-python-logging-08	unless the keyword argument *force* is set

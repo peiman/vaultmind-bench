@@ -1,0 +1,8 @@
+{
+  "vaultmind": "vaultmind version v0.10.15, commit a9cc4011e6568c1d39f6dad46954dc786ac14f89, built at 2026-10-19_22:22:04",
+  "rg": "ripgrep 15.2.0",
+  "claude_cli": "2.1.304 (Claude Code)",
+  "model_id": "claude-haiku-5-5",
+  "python": "Python 3.14.8",
+  "harness_git_sha": "7f1f6ae94c0fd4f4bc97b670f15f05b67974f8b7"
+}
