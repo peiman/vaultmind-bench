@@ -43,7 +43,7 @@ check the numbers, not the author.
 | path | contents |
 |---|---|
 | `sets/heldout/` | the judge: 50 questions, labels, sources, licenses, and the imported section notes (225 notes) |
-| `sets/devB/` | the development set: 50 questions, labels and sources. Its document text is **not** included yet (see below) |
+| `sets/devB/` | the development set: 50 questions, labels, sources, and five of its six documents (Redis withheld, see below) |
 | `harness/` | one runner per system, one scorer for all, `run_all.sh` |
 | `results/` | raw per-question output of every system on every run, plus scores |
 | `METHOD.md` | question, systems, metric, the freeze, and the pre-registered claims |
@@ -68,12 +68,16 @@ questions between runs (see the two dev-set runs in RESULTS.md).
 - **Single held-out run per system.** Agent baselines vary run to run.
 - **50 questions** per set. One question is 2 points.
 - **QMD** was planned as a baseline but did not run here; see `results/devB/qmd.skip`.
-- **Dev B documents are withheld** until each one's license is confirmed for
-  redistribution. The questions, labels, source URLs and snapshot hashes are included.
+- **Dev B's Redis Cluster spec is withheld**: Redis documentation is CC BY-NC-SA 4.0,
+  and we have not established which license covers this snapshot. Its nine questions,
+  URL and snapshot hashes are included; a re-run here scores them as misses unless
+  you import the page yourself. The other five dev B documents are included
+  (`sets/devB/LICENSES/LICENSES.md`).
 
 ## Licenses
 
-Harness code: MIT ([LICENSE](LICENSE)). The held-out documents keep their own
-licenses, recorded with attribution per document in `sets/heldout/sources.yaml`
-(IETF TLP, PSF License, CC BY 4.0, MIT, CC BY-SA). Changes to them: HTML converted
+Harness code: MIT ([LICENSE](LICENSE)). The documents keep their own licenses,
+recorded with attribution per document: held-out in `sets/heldout/sources.yaml`
+(IETF TLP, PSF License, CC BY 4.0, MIT, CC BY-SA), dev B in
+`sets/devB/LICENSES/LICENSES.md` (PSF License, CC BY 4.0, BSD 2-Clause, IETF TLP, GPL-2.0). Changes to them: HTML converted
 to Markdown and split into section notes by `vaultmind import`.
